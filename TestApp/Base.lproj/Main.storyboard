@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is place for identifierForVendor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMf-5s-knW">
-                                <rect key="frame" x="10" y="212" width="300" height="56"/>
+                                <rect key="frame" x="10" y="256" width="300" height="56"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="identifierForVendor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xn-40-zEv">
-                                <rect key="frame" x="95.5" y="178" width="129" height="20"/>
+                                <rect key="frame" x="95.5" y="222" width="129" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="mN2-e1-mZQ"/>
                                 </constraints>
@@ -45,6 +45,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is place for Network inform about MAC address, IP address, WiFi and etc..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtK-A0-DTt">
+                                <rect key="frame" x="0.0" y="320" width="320" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -52,20 +58,25 @@
                             <constraint firstItem="zMf-5s-knW" firstAttribute="top" secondItem="0xn-40-zEv" secondAttribute="bottom" constant="14" id="17R-Tl-OkC"/>
                             <constraint firstItem="zMf-5s-knW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1hc-Ap-nro"/>
                             <constraint firstItem="0xn-40-zEv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="30n-cE-pAu"/>
+                            <constraint firstItem="BtK-A0-DTt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="F8r-51-vmP"/>
                             <constraint firstItem="zMf-5s-knW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IwM-4l-beP"/>
                             <constraint firstAttribute="trailing" secondItem="zMf-5s-knW" secondAttribute="trailing" constant="10" id="Kks-Kw-mDJ"/>
                             <constraint firstItem="zMf-5s-knW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="VDA-tg-JOV"/>
                             <constraint firstItem="POb-rf-LWv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X1H-pm-s2h"/>
+                            <constraint firstItem="BtK-A0-DTt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XpF-Z2-ug0"/>
                             <constraint firstItem="iWU-iP-4bp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y1G-DX-5oH"/>
                             <constraint firstItem="iWU-iP-4bp" firstAttribute="top" secondItem="POb-rf-LWv" secondAttribute="bottom" constant="8" id="hrZ-tP-vYB"/>
                             <constraint firstItem="POb-rf-LWv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tH6-Rf-b6j"/>
                             <constraint firstItem="iWU-iP-4bp" firstAttribute="leading" secondItem="POb-rf-LWv" secondAttribute="leading" id="v8i-Wn-kM0"/>
+                            <constraint firstItem="BtK-A0-DTt" firstAttribute="top" secondItem="zMf-5s-knW" secondAttribute="bottom" constant="8" id="zcx-fX-ybZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="PlaceNetworkInformation" destination="BtK-A0-DTt" id="UxK-mQ-PiQ"/>
                         <outlet property="indentifier" destination="zMf-5s-knW" id="6Z9-sy-OfB"/>
                         <outlet property="indentifierAdvertising" destination="iWU-iP-4bp" id="JTV-Fr-jev"/>
+                        <outlet property="placeNetworkInformation" destination="BtK-A0-DTt" id="oJr-ol-QF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
