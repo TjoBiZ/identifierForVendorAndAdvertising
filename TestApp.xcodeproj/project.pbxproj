@@ -12,6 +12,7 @@
 		F330353A264AC00500D3F3AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3303538264AC00500D3F3AB /* Main.storyboard */; };
 		F330353C264AC00700D3F3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F330353B264AC00700D3F3AB /* Assets.xcassets */; };
 		F330353F264AC00700D3F3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F330353D264AC00700D3F3AB /* LaunchScreen.storyboard */; };
+		F3BA2CCA264C5B7900FECAD3 /* CGetMACIP.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BA2CC9264C5B7900FECAD3 /* CGetMACIP.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		F330353B264AC00700D3F3AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F330353E264AC00700D3F3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3303540264AC00700D3F3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3BA2CC7264C5B7800FECAD3 /* TestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		F3BA2CC8264C5B7900FECAD3 /* CGetMACIP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGetMACIP.h; sourceTree = "<group>"; };
+		F3BA2CC9264C5B7900FECAD3 /* CGetMACIP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CGetMACIP.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,9 @@
 				F330353B264AC00700D3F3AB /* Assets.xcassets */,
 				F330353D264AC00700D3F3AB /* LaunchScreen.storyboard */,
 				F3303540264AC00700D3F3AB /* Info.plist */,
+				F3BA2CC8264C5B7900FECAD3 /* CGetMACIP.h */,
+				F3BA2CC9264C5B7900FECAD3 /* CGetMACIP.c */,
+				F3BA2CC7264C5B7800FECAD3 /* TestApp-Bridging-Header.h */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 				TargetAttributes = {
 					F3303530264AC00500D3F3AB = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -135,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BA2CCA264C5B7900FECAD3 /* CGetMACIP.c in Sources */,
 				F3303537264AC00500D3F3AB /* ViewController.swift in Sources */,
 				F3303535264AC00500D3F3AB /* AppDelegate.swift in Sources */,
 			);
@@ -282,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X77DCP7786;
 				INFOPLIST_FILE = TestApp/Info.plist;
@@ -292,6 +302,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tjo.biz.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/TestApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X77DCP7786;
 				INFOPLIST_FILE = TestApp/Info.plist;
@@ -311,6 +324,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tjo.biz.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestApp/TestApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

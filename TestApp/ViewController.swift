@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        HelloFromC()
+        
         func identifierForAdvertising() -> String? {
             // Check whether advertising tracking is enabled
             guard ASIdentifierManager.shared().isAdvertisingTrackingEnabled else {
