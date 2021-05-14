@@ -9,14 +9,18 @@
 import UIKit
 import AdSupport
 import Network
+import SystemConfiguration.CaptiveNetwork
+
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var indentifier: UILabel!
-    
     @IBOutlet weak var indentifierAdvertising: UILabel!
-    
     @IBOutlet weak var placeNetworkInformation: UILabel!
+    @IBOutlet weak var routerIP: UILabel!
+    @IBOutlet weak var BSSID: UILabel!
+    @IBOutlet weak var SSID: UILabel!
+    @IBOutlet weak var iOSVersion: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +79,29 @@ class ViewController: UIViewController {
             indentifier.text = UUID
         } else {
             indentifier.text = "It doesn't work"
+        }
+        
+        
+        let wifiNET:(String?, String?) = getWiFiSsid()
+
+        if let wifiSsid = wifiNET.0 {
+            SSID.text = "Wi-Fi Network: " + wifiSsid
+        } else {
+            SSID.text = "SSID doesn't work"
+        }
+        
+        if let wifiSsid = wifiNET.1 {
+            BSSID.text = "Mac address: " + wifiSsid
+        } else {
+            BSSID.text = "BSSID doesn't work"
+        }
+
+
+        let systemVersion:String? = UIDevice.current.systemVersion
+        if let version = systemVersion {
+            iOSVersion.text = "iOS version: " + version
+        } else {
+            iOSVersion.text = "Doesn't get version"
         }
         
         
@@ -170,7 +197,7 @@ enum Network: String {
 
 
 
-// New three
+// Get all network Interfaces
 func getInterfaces() -> [(name : String, addr: String, mac : String)] {
     
     var addresses = [(name : String, addr: String, mac : String)]()
@@ -228,3 +255,25 @@ func getInterfaces() -> [(name : String, addr: String, mac : String)] {
     
     return addresses
 }
+
+
+//Get SSID and BSSID
+
+func getWiFiSsid() -> (String?, String?) {
+    var ssid: String?
+    var bssid: String?
+    if let interfaces = CNCopySupportedInterfaces() as NSArray? {
+        for interface in interfaces {
+            if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
+                ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
+                print("ssid:", ssid ?? "Can't get ssid")
+                bssid = interfaceInfo[kCNNetworkInfoKeyBSSID as String] as? String
+                print("bssid:", bssid ?? "Can't get bssid")
+                break
+            }
+        }
+    }
+    return (ssid, bssid)
+}
+
+
