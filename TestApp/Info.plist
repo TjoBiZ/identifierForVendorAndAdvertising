@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Приложение хочет использовать Вашу геолокацию</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Разрешить программе использовать Вашу геолокацию, в дальнейшем поможет при поиске Вас в базе рекрутеров.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
