@@ -10,6 +10,7 @@ import UIKit
 import AdSupport
 import Network
 import SystemConfiguration.CaptiveNetwork
+import CoreLocation
 
 
 class ViewController: UIViewController {
@@ -103,6 +104,19 @@ class ViewController: UIViewController {
         } else {
             iOSVersion.text = "Doesn't get version"
         }
+        
+        
+//        var locManager = CLLocationManager()
+//        locManager.requestWhenInUseAuthorization()
+//        
+//        var currentLocation: CLLocation!
+//        
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+//                CLLocationManager.authorizationStatus() ==  .authorizedAlways {
+//            currentLocation = locManager.location
+//        }
+//        print("longitude: \(currentLocation.coordinate.longitude) latitude:  \(currentLocation.coordinate.latitude)")
+        
         
         
     }
