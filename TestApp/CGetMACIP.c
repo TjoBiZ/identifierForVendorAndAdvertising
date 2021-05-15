@@ -7,6 +7,8 @@
 //
 
 #include "CGetMACIP.h"
+#include <ifaddrs.h>
+#include <net/if_dl.h>
 
 void HelloFromC() {
     printf("Hello there from C would be show MAC and IP address");
