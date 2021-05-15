@@ -22,6 +22,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var BSSID: UILabel!
     @IBOutlet weak var SSID: UILabel!
     @IBOutlet weak var iOSVersion: UILabel!
+    @IBOutlet weak var latitudeLongitude: UILabel!
+    
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,17 +109,17 @@ class ViewController: UIViewController {
         }
         
         
-//        var locManager = CLLocationManager()
-//        locManager.requestWhenInUseAuthorization()
-//        
-//        var currentLocation: CLLocation!
-//        
-//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-//                CLLocationManager.authorizationStatus() ==  .authorizedAlways {
-//            currentLocation = locManager.location
-//        }
-//        print("longitude: \(currentLocation.coordinate.longitude) latitude:  \(currentLocation.coordinate.latitude)")
-        
+        locationManager.requestWhenInUseAuthorization()
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            currentLoc = locationManager.location
+            let latitude: String = String(format: "%f", currentLoc.coordinate.latitude)
+            let longitude: String = String(format: "%f", currentLoc.coordinate.longitude)
+            print(latitude)
+            print(longitude)
+            latitudeLongitude.text = "latitude/longitude: \(latitude)/\(longitude)"
+        }
         
         
     }

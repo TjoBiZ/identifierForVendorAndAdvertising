@@ -87,6 +87,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latitude / longitude:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dp-Je-Jme">
+                                <rect key="frame" x="0.0" y="391" width="320" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="2I0-wY-ayj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -99,11 +108,13 @@
                             <constraint firstItem="BtK-A0-DTt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="F8r-51-vmP"/>
                             <constraint firstItem="zMf-5s-knW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IwM-4l-beP"/>
                             <constraint firstAttribute="trailing" secondItem="zMf-5s-knW" secondAttribute="trailing" constant="10" id="Kks-Kw-mDJ"/>
+                            <constraint firstItem="7Dp-Je-Jme" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RLc-Yr-i3n"/>
                             <constraint firstItem="93a-Lv-FBA" firstAttribute="top" secondItem="J9l-Qw-nu8" secondAttribute="bottom" constant="8" id="Reg-b9-18a"/>
                             <constraint firstItem="zMf-5s-knW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="VDA-tg-JOV"/>
                             <constraint firstItem="POb-rf-LWv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X1H-pm-s2h"/>
                             <constraint firstItem="OVd-SE-k5O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XJl-oF-WrW"/>
                             <constraint firstItem="BtK-A0-DTt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XpF-Z2-ug0"/>
+                            <constraint firstItem="7Dp-Je-Jme" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="XuY-eJ-hsn"/>
                             <constraint firstItem="J9l-Qw-nu8" firstAttribute="top" secondItem="crz-4L-lSb" secondAttribute="bottom" constant="8" id="Xun-Vs-3cM"/>
                             <constraint firstItem="iWU-iP-4bp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y1G-DX-5oH"/>
                             <constraint firstItem="J9l-Qw-nu8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YMs-96-Vc5"/>
@@ -112,6 +123,7 @@
                             <constraint firstItem="iWU-iP-4bp" firstAttribute="top" secondItem="POb-rf-LWv" secondAttribute="bottom" constant="8" id="hrZ-tP-vYB"/>
                             <constraint firstItem="93a-Lv-FBA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="maD-JY-lfG"/>
                             <constraint firstItem="OVd-SE-k5O" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="o7J-u5-pzH"/>
+                            <constraint firstItem="7Dp-Je-Jme" firstAttribute="top" secondItem="OVd-SE-k5O" secondAttribute="bottom" constant="8" id="phh-Ai-6Y6"/>
                             <constraint firstItem="POb-rf-LWv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tH6-Rf-b6j"/>
                             <constraint firstItem="iWU-iP-4bp" firstAttribute="leading" secondItem="POb-rf-LWv" secondAttribute="leading" id="v8i-Wn-kM0"/>
                             <constraint firstItem="crz-4L-lSb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wxP-PL-rus"/>
@@ -127,6 +139,7 @@
                         <outlet property="iOSVersion" destination="OVd-SE-k5O" id="H5S-vk-qLR"/>
                         <outlet property="indentifier" destination="zMf-5s-knW" id="6Z9-sy-OfB"/>
                         <outlet property="indentifierAdvertising" destination="iWU-iP-4bp" id="JTV-Fr-jev"/>
+                        <outlet property="latitudeLongitude" destination="7Dp-Je-Jme" id="uZ5-Mv-Sqb"/>
                         <outlet property="placeNetworkInformation" destination="BtK-A0-DTt" id="oJr-ol-QF7"/>
                         <outlet property="routerIP" destination="crz-4L-lSb" id="6xH-42-FPh"/>
                     </connections>
