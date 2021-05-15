@@ -12,6 +12,7 @@
 		F330353A264AC00500D3F3AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3303538264AC00500D3F3AB /* Main.storyboard */; };
 		F330353C264AC00700D3F3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F330353B264AC00700D3F3AB /* Assets.xcassets */; };
 		F330353F264AC00700D3F3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F330353D264AC00700D3F3AB /* LaunchScreen.storyboard */; };
+		F387DD0F2650244600C2AC0F /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F387DD0E2650244600C2AC0F /* ExternalAccessory.framework */; };
 		F3BA2CCA264C5B7900FECAD3 /* CGetMACIP.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BA2CC9264C5B7900FECAD3 /* CGetMACIP.c */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 		F330353B264AC00700D3F3AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F330353E264AC00700D3F3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3303540264AC00700D3F3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F387DD0E2650244600C2AC0F /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		F387DD102650244600C2AC0F /* TestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestApp.entitlements; sourceTree = "<group>"; };
 		F3BA2CC7264C5B7800FECAD3 /* TestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3BA2CC8264C5B7900FECAD3 /* CGetMACIP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGetMACIP.h; sourceTree = "<group>"; };
 		F3BA2CC9264C5B7900FECAD3 /* CGetMACIP.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CGetMACIP.c; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F387DD0F2650244600C2AC0F /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +48,7 @@
 			children = (
 				F3303533264AC00500D3F3AB /* TestApp */,
 				F3303532264AC00500D3F3AB /* Products */,
+				F387DD0D2650244600C2AC0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +63,7 @@
 		F3303533264AC00500D3F3AB /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				F387DD102650244600C2AC0F /* TestApp.entitlements */,
 				F3303534264AC00500D3F3AB /* AppDelegate.swift */,
 				F3303536264AC00500D3F3AB /* ViewController.swift */,
 				F3303538264AC00500D3F3AB /* Main.storyboard */,
@@ -69,6 +75,14 @@
 				F3BA2CC7264C5B7800FECAD3 /* TestApp-Bridging-Header.h */,
 			);
 			path = TestApp;
+			sourceTree = "<group>";
+		};
+		F387DD0D2650244600C2AC0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F387DD0E2650244600C2AC0F /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +118,11 @@
 					F3303530264AC00500D3F3AB = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -292,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X77DCP7786;
 				INFOPLIST_FILE = TestApp/Info.plist;
@@ -314,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X77DCP7786;
 				INFOPLIST_FILE = TestApp/Info.plist;

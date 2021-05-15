@@ -6,6 +6,10 @@
 	<string>Приложение хочет использовать Вашу геолокацию</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Разрешить программе использовать Вашу геолокацию, в дальнейшем поможет при поиске Вас в базе рекрутеров.</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Gather location updates to get SSID information</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Gather location updates to get SSID information</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

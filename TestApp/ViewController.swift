@@ -31,6 +31,17 @@ class ViewController: UIViewController {
         
         HelloFromC()
         
+        
+        var ipAddr: (String?, String?) = getWiFiAddress()
+//        print(ipAddr[0])
+//        print(ipAddr[1])
+//        if let getIP = ipAddr[0] {
+//            print(getIP)
+//        }
+        
+        
+        
+        
         var networkInformation:String = ""
         
         for addr in getInterfaces() {
@@ -118,7 +129,7 @@ class ViewController: UIViewController {
             let longitude: String = String(format: "%f", currentLoc.coordinate.longitude)
             print(latitude)
             print(longitude)
-            latitudeLongitude.text = "latitude/longitude: \(latitude)/\(longitude)"
+            latitudeLongitude.text = "latitude / longitude: \(latitude) / \(longitude)"
         }
         
         
@@ -131,13 +142,14 @@ class ViewController: UIViewController {
 
 
 // Return IP address of WiFi interface (en0) as a String, or `nil`
-func getWiFiAddress() -> String? {
+func getWiFiAddress() -> (String?, String?){
     var address : String?
+    var netmask : String?
     
     // Get list of all interfaces on the local machine:
     var ifaddr : UnsafeMutablePointer<ifaddrs>?
-    guard getifaddrs(&ifaddr) == 0 else { return nil }
-    guard let firstAddr = ifaddr else { return nil }
+    guard getifaddrs(&ifaddr) == 0 else { return (nil, nil) }
+    guard let firstAddr = ifaddr else { return (nil, nil) }
     
     // For each interface ...
     for ifptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
@@ -157,12 +169,22 @@ func getWiFiAddress() -> String? {
                             &hostname, socklen_t(hostname.count),
                             nil, socklen_t(0), NI_NUMERICHOST)
                 address = String(cString: hostname)
+                
+                if interface.ifa_dstaddr != nil {
+                var router_netmask = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+                getnameinfo(interface.ifa_netmask, socklen_t(interface.ifa_netmask.pointee.sa_len),
+                            &router_netmask, socklen_t(router_netmask.count),
+                            nil, socklen_t(0), NI_NUMERICHOST)
+                netmask = String(cString: router_netmask)
+                } else {
+                    netmask = nil
+                }
             }
         }
     }
     freeifaddrs(ifaddr)
     
-    return address
+    return (address, netmask)
 }
 
 
@@ -292,5 +314,10 @@ func getWiFiSsid() -> (String?, String?) {
     }
     return (ssid, bssid)
 }
+
+
+
+
+
 
 
