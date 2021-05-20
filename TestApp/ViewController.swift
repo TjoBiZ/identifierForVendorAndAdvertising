@@ -33,13 +33,16 @@ class ViewController: UIViewController {
         
         
         var ipAddr: (String?, String?) = getWiFiAddress()
-//        print(ipAddr[0])
-//        print(ipAddr[1])
-//        if let getIP = ipAddr[0] {
-//            print(getIP)
+        
+//        Getting the Gateway
+//        If you have the ability to be in iOS ≥ 13, you can use the Network framework.
+//
+//        The NWPath you get from the NWPathMonitor.pathUpdateHandler will have the NWPath.gateways variable set to the gateways IPs.
+//        let monitor = NWPathMonitor(requiredInterfaceType: .wifi)
+//        monitor.pathUpdateHandler = { path in
+//            print(path.gateways)
 //        }
-        
-        
+//        monitor.start(queue: DispatchQueue(label: "nwpathmonitor.queue"))
         
         
         var networkInformation:String = ""
@@ -314,9 +317,6 @@ func getWiFiSsid() -> (String?, String?) {
     }
     return (ssid, bssid)
 }
-
-
-
 
 
 
